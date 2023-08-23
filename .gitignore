@@ -1,0 +1,6 @@
+*.7z
+*.ini
+*.spec
+*.txt
+build/*
+dist/*
