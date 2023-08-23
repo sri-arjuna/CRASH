@@ -43,13 +43,13 @@ This is due to the nature of unforseeable bugs, system settings, system conditio
 Eventhough the CRASH has been tested before each release on our very own systems to work properly, this does not mean that the tool is perfect.
 
 To report bugs, please use either:
-- [NexusMods - Bugs]()
-- [GitHub - Issues]()
+- [NexusMods - Bugs](https://www.nexusmods.com/starfield/mods/64?tab=bugs)
+- [GitHub - Issues](https://github.com/sri-arjuna/CRASH/issues)
 
 ---
 
 ![Credits](docs/img/32_Credits.png)
 
-- Bethesda Game Studio (BGS), for the ganme
-- NexusMods, for the platform
+- [Bethesda Game Studio (BGS)](https://bethesda.net/game/starfield), for the ganme
+- [NexusMods](https://www.nexusmods.com/starfield/), for the platform
 
