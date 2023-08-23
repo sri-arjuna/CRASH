@@ -22,7 +22,7 @@ In order to get a crash log we can work on, these files / mods are required:
 
 As usual, extract the "zipfile" to either:
 - Logdir, which usualy is: %userprofile%\Documents\My Games\Starfield\SFSE
-- Toolldir, usualy something like: E:\Vortex\-Tools\CRASH_VERSION
+- Toolldir, usualy something like: E:\Vortex\\-Tools\CRASH_VERSION
 
 ---
 
