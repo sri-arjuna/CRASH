@@ -13,8 +13,15 @@ Who have combined their power and skills to give you the best experience to have
 ![Requirements](docs/img/32_Requirements.png)
 
 In order to get a crash log we can work on, these files / mods are required:
-- [SFSE](https://github.com/ianpatt/sfse)
-- [Crashlog Writer]()
+* Nexus (exe ; recommended):
+    * [SFSE](https://github.com/ianpatt/sfse)
+    * [Crashlog Writer]()
+* Github (script ; for nerds and developers):
+    * Same as the 'Nexus' variant, AND:
+    * [Python 3.11 or higher](https://www.python.org/downloads/)
+    * [AspireTUI](https://github.com/sri-arjuna/ASPIRE)
+        * Please make sure to create a relative ``mklink`` to it within the directory you want to execute CRASH.py from.
+        * From an administrator console terminal, enter something like: ``mklink ../ASPIRE/aspire AspireTUI`` when you are at the location of CRASH.py
 
 ---
 
