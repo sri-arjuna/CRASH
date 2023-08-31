@@ -196,43 +196,6 @@ def crash_init_dir_log() -> str :
 	tui.print(f"DEBUG :: {Path(DIR_DOCS) / game_log_path}")
 	return Path(DIR_DOCS) / game_log_path
 
-	# 2
-	Official_Logs = namedtuple("Official_Logs", ["reg_hive", "reg_key", "reg_entry", "game_log_path"])
-	ntp_logdir = Official_Logs(
-	reg_hive = "HKEY_CURRENT_USER",
-	reg_key = r"SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders",
-	reg_entry = "Personal",
-	game_log_path = "My Games\\Skyrim Special Edition\SKSE"
-	)
-
-	# Original
-	DIR_DOCS = reg_value_get(
-		ntp_logdir.reg_hive,
-		ntp_logdir.reg_key, 
-		ntp_logdir.reg_entry
-		)
-	print(f"DEBUG - shows correct: {DIR_DOCS}\{ntp_logdir.game_log_path}")
-	# on return, it fails at empty string
-	return f"{DIR_DOCS}\{ntp_logdir.game_log_path}"
-	# Original
-	DIR_DOCS = reg_value_get(
-		"HKEY_CURRENT_USER",
-		r"SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders", 
-		"Personal"
-		)
-	#print(DIR_DOCS, flush=True)
-	#print(repr(DIR_DOCS), flush=True)
-	# TODO - fix to Starfield
-	if DIR_DOCS != "":
-		return_dir = f"{DIR_DOCS}\My Games\Skyrim Special Edition\SKSE"
-		return f"{return_dir}" #DIR_LOG_OFFICIAL
-	else:
-		return None
-
-	userprofile = os.path.expanduser("~")
-	my_games_path = os.path.join(userprofile, "Documents", "My Games", "Skyrim Special Edition", "SKSE")
-	return f"{my_games_path}"
-
 ######################################
 ### Fixes & Patches
 ######################################
@@ -343,34 +306,7 @@ CRASH.py %s
 
 # First start
 def CRASH_FIRST_START(*args):
-	#print("debug first start:", args[0])
 	DIR_LOG_OFFICIAL = f"{args[0]}"
-	#print("debug first official:", DIR_LOG_OFFICIAL)
-	# Get default log dir:
-	#DIR_LOG_OFFICIAL = crash_init_dir_log()
-	#DIR_DOCS = reg_value_get(
-	#	"HKEY_CURRENT_USER",
-	#	r"SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders", 
-	#	"Personal"
-	#	)
-	# TODO - fix to Starfield
-	#if DIR_DOCS != "" or DIR_DOCS is not None:
-	#	DIR_LOG_OFFICIAL = f"{DIR_DOCS}\My Games\Skyrim Special Edition\SKSE"
-		#return f"{return_dir}" #DIR_LOG_OFFICIAL
-	#else:
-		#return None
-	#	DIR_LOG_OFFICIAL = f"EMPTY: {DIR_DOCS}"
-	#print(DIR_DOCS, flush=True)
-	#print(DIR_LOG_OFFICIAL, flush=True)
-
-
-	#tui.status(2, f"DIR_LOG_OFFICIAL: \t{DIR_LOG_OFFICIAL}", flush=True)
-	#tui.print("DIR_LOG_OFFICIAL 1:", f"{repr(DIR_LOG_OFFICIAL)}") #, f"StatusDict[StatusEnum.Todo]")
-	#tui.print("DIR_LOG_OFFICIAL 2:", f"{DIR_LOG_OFFICIAL}")
-	#print("DIR_LOG_OFFICIAL:::", repr(DIR_LOG_OFFICIAL))
-	#tui.print("DIR_LOG_OFFICIAL:" f"{DIR_LOG_OFFICIAL}")
-	#tui.status(True, f"DIR_LOG_OFFICIAL:", f"..{DIR_LOG_OFFICIAL}..")
-	
 	# Get Vendor, then DIR_GAME
 	vendor_index, vendor_name = crash_init_vendor()
 	tui.status(2, f"Vendor: \t\t\t{vendor_name}")
@@ -463,8 +399,6 @@ def crash_config_set(c_path: str, c_file: str, gamedir: str, vendor: str, bLogUs
 		tui.status(False, "Written:" f"{this_file}")
 		return False
 
-			
-
 
 ######################################
 ### Handle INI config
@@ -531,12 +465,6 @@ def check_ver_Windows():
 	else:
 		return False
 
-
-
-####################################################################################################
-### Data Structures
-####################################################################################################
-
 ####################################################################################################
 ### Load Environment
 ####################################################################################################
@@ -578,8 +506,6 @@ if len(sys.argv) == 2:
 else:
 	# Default behaviour, use 'exe' dir to check for logs
 	DIR_LOGS = DIR_EXE
-
-
 
 
 ######################################
