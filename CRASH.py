@@ -214,7 +214,7 @@ class CORE_FIXES(Enum):
         "Starfield Script Extender",
         "Most required tool to run the most interesting mods.",
         0.1,
-        "url to nexus or silverlock",
+        "https://sfse.silverlock.org/",
         "https://github.com/ianpatt/sfse",
         "sfse_*.dll",
         "100% Required"
@@ -511,7 +511,7 @@ else:
 ######################################
 ### Start Console output
 ######################################
-tui.header(f" {script_title} ", f" © {script_copyright} by Sephrajin ")
+tui.header(f" {script_title} ", f" © {script_copyright} by Poet & Sephrajin ")
 tui.title("Initialize Framework")
 
 # Parse logdirs for config file
